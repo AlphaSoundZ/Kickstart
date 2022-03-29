@@ -1,46 +1,24 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
-
+typedef long long ll;
 using namespace std;
 
-void solve();
-
 int main() {
-    int t;
+    int t, n, f, bus; 
+    ll d;
     cin >> t;
-    cout << "Case #" << "1" << ": " << endl;
-    solve();
-
-    for (int i = 1; i <= t; i++)
+    for (ll i = 1; i <= t; ++i)
     {
+        cin >> n;
+        cin >> d;
+        
+        ll x[n];
+        for (ll e = 0; e < n; ++e)
+            cin >> x[e];
+
+        for (ll i = n-1; i >= 0; --i)
+            d = d-(d % x[i]);
+        cout << "Case #" << i << ": " << d << endl;
     }
     return 0;
-}
-
-void solve() {
-    cout << "test" << endl;
-    int n, d;
-    int result = 0;
-    int x[100000];
-    int f;
-    cin >> n;
-    cin >> d;
-
-    for (int e = 0; e < n; ++e)
-    {
-        cin >> x[e];
-    }
-    for (int i = n-1; i > 0; --i)
-    {
-        cout << "result:: " << endl;
-        f = d % x[i];
-        if (d-f > result) {
-            cout << "try x[i] days before";
-        }
-        else {
-            result = d-f;
-            cout << result << endl;
-        }
-    }
 }

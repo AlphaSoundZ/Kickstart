@@ -14,7 +14,7 @@ int main()
 
     for (int i = 0; i < movements.length(); ++i)
     {
-        if ((movements[i] == "n")
+        if (movements[i] == "n")
         {
             ++Pos[1];
         }
